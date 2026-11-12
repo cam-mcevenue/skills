@@ -1,0 +1,8 @@
+{
+  "name": "cam-mcevenue",
+  "owner": { "name": "Cameron McEvenue" },
+  "plugins": [
+    { "name": "engineering", "source": "./", "skills": [] },
+    { "name": "writing", "source": "./", "skills": [] }
+  ]
+}
