@@ -1,5 +1,5 @@
 ---
-name: effect-upstream
+name: effect
 description: |
   Opinionated guide for building production TypeScript applications with Effect v4. Use when implementing Effect workflows, services, layers, schemas, configuration, schedules, caches, streams, HTTP clients, or tests.
 license: MIT
