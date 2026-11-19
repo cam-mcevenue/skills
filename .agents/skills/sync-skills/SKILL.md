@@ -1,6 +1,6 @@
 ---
-name: sync-skill
-description: Copy newly installed third-party skills into skills/<author>/ with attribution, and check existing copies' frontmatter and licenses.
+name: sync-skills
+description: Copy newly installed third-party skills into skills/<author>/ with attribution, check existing copies' frontmatter and licenses, and update marketplace.json.
 disable-model-invocation: true
 ---
 
@@ -14,13 +14,23 @@ A skill is **unsynced** when it's in `skills-lock.json` but has no copy. If no s
 
 For each unsynced skill:
 
-1. Ask the user for its `category`.
+1. Ask the user for its categories (one or more).
 2. Copy `.agents/skills/<skill>/` to `skills/<owner>/<skill>/`, keeping the skill's name.
 3. Give the copy the attribution described under [Attribution](#attribution).
 
 ## 2. Check existing copies
 
 Check every other copy against [Attribution](#attribution). Report each copy that doesn't match, saying what's wrong. Fix a copy only after the user agrees.
+
+## 3. Update marketplace.json
+
+`.claude-plugin/marketplace.json` controls which skills other projects can install, and each group in it becomes a heading in the install picker. Make it list every skill under `skills/`, including the user's own skills in `skills/cam-mcevenue/`. A skill goes in one group per entry in its `metadata.category`, as `./skills/<owner>/<skill>`, and each group has `"source": "./"`.
+
+- A group's name is a category. For a skill outside `skills/cam-mcevenue/`, add `-<owner>`, as in `engineering` and `engineering-mattpocock`.
+- If a skill has no `metadata.category`, ask the user for its categories and add them to the skill's frontmatter.
+- Keep `name` and `owner` as they are. Order the groups by category, with the user's own group first within each category.
+
+Show the user the groups that changed.
 
 ## Attribution
 
@@ -31,8 +41,10 @@ metadata:
   author: <author name>
   source: https://github.com/<owner>/<repo>/blob/HEAD/<skillPath>
   adapted-by: <owner.name in .claude-plugin/marketplace.json>
-  category: <category>
+  category: [<category>, ...]
 ```
+
+`category` is always a list, even with one entry: `[engineering]`, or `[productivity, engineering]` for a skill in two groups.
 
 License files:
 
