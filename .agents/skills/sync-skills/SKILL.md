@@ -1,0 +1,60 @@
+---
+name: sync-skills
+description: Copy newly installed third-party skills into skills/<author>/ with attribution, check existing copies' frontmatter and licenses, and update marketplace.json.
+disable-model-invocation: true
+---
+
+The user installs skills with `npx skills add`. This skill installs nothing.
+
+An installed skill lives in `.agents/skills/<skill>/` and is recorded in `skills-lock.json`. Its published **copy** lives in `skills/<owner>/<skill>/`, where `<owner>` comes from the lock entry's `source` (`<owner>/<repo>`).
+
+## 1. Sync new skills
+
+A skill is **unsynced** when it's in `skills-lock.json` but has no copy. If no skills are unsynced, tell the user, then go to step 2.
+
+For each unsynced skill:
+
+1. Ask the user for its categories (one or more).
+2. Copy `.agents/skills/<skill>/` to `skills/<owner>/<skill>/`, keeping the skill's name.
+3. Give the copy the attribution described under [Attribution](#attribution).
+
+## 2. Check existing copies
+
+Check every other copy against [Attribution](#attribution). Report each copy that doesn't match, saying what's wrong. Fix a copy only after the user agrees.
+
+## 3. Update marketplace.json
+
+`.claude-plugin/marketplace.json` controls which skills other projects can install, and each group in it becomes a heading in the install picker. Make it list every skill under `skills/`, including the user's own skills in `skills/cam-mcevenue/`. A skill goes in one group per entry in its `metadata.category`, as `./skills/<owner>/<skill>`, and each group has `"source": "./"`.
+
+- A group's name is a category. For a skill outside `skills/cam-mcevenue/`, add `-<owner>`, as in `engineering` and `engineering-mattpocock`.
+- If a skill has no `metadata.category`, ask the user for its categories and add them to the skill's frontmatter.
+- Keep `name` and `owner` as they are. Order the groups by category, with the user's own group first within each category.
+
+Show the user the groups that changed.
+
+## Attribution
+
+Frontmatter: set these fields, and leave every other field and the body as they are. A `license` field is never added: the `LICENSE` files are the source of truth. If the upstream skill already has a `license` field, the copy keeps it like any other upstream field.
+
+```yaml
+metadata:
+  author: <author name>
+  source: https://github.com/<owner>/<repo>/blob/HEAD/<skillPath>
+  adapted-by: <owner.name in .claude-plugin/marketplace.json>
+  category: [<category>, ...]
+```
+
+`category` is always a list, even with one entry: `[engineering]`, or `[productivity, engineering]` for a skill in two groups.
+
+License files:
+
+- `skills/<owner>/LICENSE` holds the upstream repo's license, copied exactly.
+- Each copy has its own `LICENSE`, identical to `skills/<owner>/LICENSE`.
+- For each work named in `metadata.credits`, the copy also has `LICENSE-<owner of that work>` (for example `LICENSE-humanlayer`). It contains that repo's license, copied exactly. Keep `metadata.credits` and `CREDITS.md` as you found them.
+
+Every license here is expected to be MIT. If any upstream or credited repo's license isn't MIT (its `spdx_id` is anything other than `MIT`, including `NOASSERTION` or no license), stop work on every skill from that repo. Name the repo and its license, and leave the next step to the user.
+
+Look up these facts with `gh`:
+
+- license: `gh api repos/<owner>/<repo>/license`. `.license.spdx_id` names the license, and `.content`, decoded from base64, is its text.
+- author name: `gh api users/<owner> --jq .name`. If it's empty, use `<owner>`.
