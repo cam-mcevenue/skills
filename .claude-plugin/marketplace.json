@@ -2,7 +2,15 @@
   "name": "cam-mcevenue",
   "owner": { "name": "Cameron McEvenue" },
   "plugins": [
-    { "name": "engineering", "source": "./", "skills": [] },
-    { "name": "writing", "source": "./", "skills": [] }
+    {
+      "name": "engineering",
+      "source": "./",
+      "skills": ["./skills/engineering/code-conventions"]
+    },
+    {
+      "name": "vendored",
+      "source": "./",
+      "skills": ["./.agents/skills/effect"]
+    }
   ]
 }
