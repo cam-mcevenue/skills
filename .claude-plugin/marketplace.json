@@ -44,8 +44,6 @@
       "source": "./",
       "skills": [
         "./skills/mattpocock/claude-handoff",
-        "./skills/mattpocock/grilling",
-        "./skills/mattpocock/grill-me",
         "./skills/mattpocock/handoff",
         "./skills/mattpocock/teach",
         "./skills/mattpocock/to-questionnaire",
