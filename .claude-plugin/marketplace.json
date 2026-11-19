@@ -3,9 +3,9 @@
   "owner": { "name": "Cameron McEvenue" },
   "plugins": [
     {
-      "name": "engineering",
+      "name": "engineering-cammcevenue",
       "source": "./",
-      "skills": ["./skills/cam-mcevenue/code-conventions"]
+      "skills": ["./skills/cammcevenue/code-conventions"]
     },
     {
       "name": "engineering-kitlangton",
@@ -44,8 +44,8 @@
       "source": "./",
       "skills": [
         "./skills/mattpocock/claude-handoff",
-        "./skills/mattpocock/grill-me",
         "./skills/mattpocock/grilling",
+        "./skills/mattpocock/grill-me",
         "./skills/mattpocock/handoff",
         "./skills/mattpocock/teach",
         "./skills/mattpocock/to-questionnaire",

@@ -6,7 +6,7 @@ metadata:
   author: Matt Pocock
   source: "https://github.com/mattpocock/skills/blob/HEAD/skills/productivity/grill-me/SKILL.md"
   adapted-by: Cameron McEvenue
-  category: [productivity,engineering]
+  category: engineering
 ---
 
 Call the Skill tool with "grilling".
