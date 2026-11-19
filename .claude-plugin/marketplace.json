@@ -10,7 +10,7 @@
     {
       "name": "vendored",
       "source": "./",
-      "skills": ["./.agents/skills/effect"]
+      "skills": ["./skills/engineering/effect"]
     }
   ]
 }

@@ -1,12 +1,13 @@
 {
   "version": 2,
   "skills": {
-    "effect": {
+    "effect-upstream": {
       "source": "kitlangton/skills",
       "commit": "71195e36024ebd2e66c5beac946e81eafd5abc43",
       "sourceType": "github",
       "skillPath": "skills/effect/SKILL.md",
-      "computedHash": "08df6d7dd3d3f3d5a6658c17b90f6b776912fd566d15c85ac6140030fafc1a9c"
+      "computedHash": "7e736114a7fd9a7115941bc8f90363affe5560211ff5e50f0f55b1a78a6c2e55",
+      "skillName": "effect"
     }
   }
 }
