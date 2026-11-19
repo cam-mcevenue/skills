@@ -3,9 +3,9 @@
   "owner": { "name": "Cameron McEvenue" },
   "plugins": [
     {
-      "name": "engineering-cammcevenue",
+      "name": "engineering-cam-mcevenue",
       "source": "./",
-      "skills": ["./skills/cammcevenue/code-conventions"]
+      "skills": ["./skills/cam-mcevenue/code-conventions"]
     },
     {
       "name": "engineering-kitlangton",
