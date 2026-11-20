@@ -2,6 +2,8 @@
 name: sync-skills
 description: Copy newly installed third-party skills into skills/<author>/ with attribution, check existing copies' frontmatter and licenses, and update marketplace.json.
 disable-model-invocation: true
+metadata:
+  internal: true
 ---
 
 The user installs skills with `npx skills add`. This skill installs nothing.
