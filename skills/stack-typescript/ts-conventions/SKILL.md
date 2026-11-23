@@ -1,5 +1,6 @@
 ---
 name: ts-conventions
+user-invocable: false
 description: How code is written across my projects. Use when writing or reviewing TypeScript modules, imports, export names, or what a package makes public.
 ---
 
