@@ -1,0 +1,3 @@
+interface:
+  display_name: "Use Issue Tracker"
+  short_description: "File, label, link and close GitHub issues"
