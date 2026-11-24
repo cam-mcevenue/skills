@@ -2,17 +2,13 @@
 name: retro
 description: "Conduct a retrospective on a coding session."
 disable-model-invocation: true
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/retro/SKILL.md"
-  adapted-by: Cameron McEvenue
 ---
 
 The user has asked for a **retrospective**. You are suggesting improvements to the coding agent's **environment** to improve future runs.
 
 ## Steps
 
-1. Call the Skill tool with `writing-for-agents` for the writing style guide.
+1. Read the **writing-for-agents** skill for the writing style guide.
 
 2. Read the primary sources for the session the user specifies. This may mean searching through session logs on this machine. If the user doesn't specify a session, default to the current one.
 

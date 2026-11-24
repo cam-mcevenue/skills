@@ -1,10 +1,7 @@
 ---
 name: diagnosing-bugs
-description: Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow.
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/diagnosing-bugs/SKILL.md"
-  adapted-by: Cameron McEvenue
+description: Diagnosis loop for hard bugs and performance regressions.
+disable-model-invocation: true
 ---
 
 # Diagnosing Bugs

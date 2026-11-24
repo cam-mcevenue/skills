@@ -2,15 +2,11 @@
 name: triage
 description: Move issues through a state machine of triage roles, categorise, verify, grill if needed, write agent-ready briefs, or close them with an outcome.
 disable-model-invocation: true
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/triage/SKILL.md"
-  adapted-by: Cameron McEvenue
 ---
 
 # Triage
 
-Move issues through a small state machine of triage roles. Call the Skill tool with "use-issue-tracker" first: it holds the labels and their meanings, the commands, and how each outcome closes.
+Move issues through a small state machine of triage roles. Read the **use-issue-tracker** skill first: it holds the labels and their meanings, the commands, and how each outcome closes.
 
 Every comment posted on an **external issue** (its author isn't the user) **must** start with this disclaimer:
 
@@ -61,7 +57,7 @@ Show counts and a one-line summary per item. Let the maintainer pick.
 
 3. **Verify the claim.** Before any grilling, check that the claim holds up. For a codebase bug, reproduce it from the reporter's steps; in any other domain, check the claim against the domain's docs and records. Report what happened: confirmed (with where), failed, or insufficient detail (a strong `needs-info` signal). A confirmed verification makes a much stronger agent brief.
 
-4. **Grill (if needed).** If the request needs fleshing out, call the Skill tool twice, for "grilling" and "domain-modeling", and grill it into shape a round of questions at a time, sharpening domain terms and updating the glossary and ADRs inline as decisions land.
+4. **Grill (if needed).** If the request needs fleshing out, read the **grill-me** and **domain-modeling** skills, then follow both together to grill it into shape a round of questions at a time, sharpening domain terms and updating the glossary and ADRs inline as decisions land.
 
 5. **Apply the outcome:**
    - `ready-for-agent`: post an agent brief comment ([AGENT-BRIEF.md](AGENT-BRIEF.md)).

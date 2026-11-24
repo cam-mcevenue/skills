@@ -1,7 +1,8 @@
 ---
 name: ts-conventions
+description: "How TypeScript is written across my projects: modules, imports, export names and package surfaces."
 user-invocable: false
-description: How code is written across my projects. Use when writing or reviewing TypeScript modules, imports, export names, or what a package makes public.
+disable-model-invocation: true
 ---
 
 # Code conventions

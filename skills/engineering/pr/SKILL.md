@@ -1,15 +1,7 @@
 ---
 name: pr
-description: "Use when writing a PR body."
-metadata:
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/pr/SKILL.md"
-  adapted-by: Cameron McEvenue
-  credits:
-    skill: show-me
-    author: Dex Horthy
-    organisation: Humanlayer
-    url: "https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md"
+description: Write a PR body.
+disable-model-invocation: true
 ---
 
 Use this template for writing the PR body:

@@ -1,11 +1,8 @@
 ---
 name: codebase-design
+description: Shared vocabulary for designing deep modules.
 user-invocable: false
-description: Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/codebase-design/SKILL.md"
-  adapted-by: Cameron McEvenue
+disable-model-invocation: true
 ---
 
 # Codebase Design

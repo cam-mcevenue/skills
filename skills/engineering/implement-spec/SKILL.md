@@ -2,15 +2,11 @@
 name: implement-spec
 description: "Implement the result of /to-spec and /to-tickets in code."
 disable-model-invocation: true
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/implement-spec/SKILL.md"
-  adapted-by: Cameron McEvenue
 ---
 
 You have been provided a spec. This spec should have tickets associated with it, describing how to implement the spec.
 
-Call the Skill tool with "use-issue-tracker": it holds the commands for reading the spec, its tickets and their blocking links.
+Read the **use-issue-tracker** skill: it holds the commands for reading the spec, its tickets and their blocking links.
 
 The goal is the entire spec implemented on a single **integration branch**, landed through one PR that closes the spec and every ticket.
 
@@ -32,14 +28,14 @@ Communication to and from subagents should be sparse. Communicate primarily thro
 
 4. Use a fresh **implementer subagent** for each ticket, each in its own worktree on its own branch. Each implementer subagent:
    - confirms its worktree is based on the integration branch before starting, and resets onto it if not;
-   - calls the Skill tool with `tdd` to build the ticket;
+   - reads the **tdd** skill, then follows it to build the ticket;
    - merges the integration branch tip into its own branch before reporting done
 
 5. Once an **implementer subagent** completes, merge its work to the integration branch with a **merger subagent**.
 
 6. If this changes the **frontier** of available tickets, kick off more **implementer subagents** to work on the new tickets. This allows for maximum concurrency.
 
-7. Once all tickets are complete, call the Skill tool with `code-review` on the integration branch. Fix all issues raised by the code review in a single fresh **implementer subagent**.
+7. Once all tickets are complete, read the **code-review** skill, then follow it on the integration branch. Fix all issues raised by the code review in a single fresh **implementer subagent**.
 
 8. Mark the draft PR ready for review, and report it.
 

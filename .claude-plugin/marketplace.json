@@ -9,11 +9,10 @@
       "source": "./",
       "skills": [
         "./skills/core/ai-docs-setup",
-        "./skills/core/claude-handoff",
+        "./skills/core/core-skills",
         "./skills/core/domain-create",
         "./skills/core/domain-modeling",
         "./skills/core/grill-me",
-        "./skills/core/grilling",
         "./skills/core/handoff",
         "./skills/core/research",
         "./skills/core/teach",
@@ -33,6 +32,8 @@
         "./skills/engineering/implement",
         "./skills/engineering/implement-spec",
         "./skills/engineering/improve-codebase-architecture",
+        "./skills/engineering/mode-engineering",
+        "./skills/engineering/mode-engineering-help",
         "./skills/engineering/pr",
         "./skills/engineering/prototype",
         "./skills/engineering/retro",
@@ -41,8 +42,7 @@
         "./skills/engineering/to-tickets",
         "./skills/engineering/triage",
         "./skills/engineering/use-issue-tracker",
-        "./skills/engineering/wayfinder",
-        "./skills/engineering/which-skill"
+        "./skills/engineering/wayfinder"
       ]
     },
     {

@@ -1,18 +1,18 @@
 ---
-name: which-skill
-description: Ask which skill or flow fits your situation. A router over the skills in this repo.
+name: mode-engineering-help
+description: Ask which skill or flow fits your situation in engineering mode.
 disable-model-invocation: true
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/ask-matt/SKILL.md"
-  adapted-by: Cameron McEvenue
 ---
 
-# Which Skill
+# Engineering mode help
 
-You don't remember every skill, so ask.
+Answer the user's question about engineering mode and its skills, and hand them the prompt or command to send. A help question gets an answer, not the work: the user asked how, so let them start it.
 
-Before stating what a skill does or recommending a step be skipped, read that skill's SKILL.md: the summaries here are for orientation only.
+Before stating what a skill does or recommending a step be skipped, read that skill in full: the summaries here are for orientation only.
+
+## Start a session
+
+Type **`/mode-engineering`** at the start of a session on code. It reads **core-skills**, then holds a trigger for every engineering and stack skill, so the agent reaches each one when its situation comes up, and the commands below also work as plain requests. Keep to one mode per session; to switch, **`/handoff`** to a fresh one. A stack skill that isn't installed is named once, with the choice to install it or carry on.
 
 A **flow** is a path through the skills. Most paths run along one **main flow**, and two **on-ramps** merge onto it. Everything else is standalone, or a vocabulary layer that runs underneath.
 
@@ -20,7 +20,7 @@ A **flow** is a path through the skills. Most paths run along one **main flow**,
 
 The route most work travels. You have an idea and want it built.
 
-1. **`/grill-with-docs`** sharpens the idea by interview. Start here whenever you are **working in a working directory**: it's stateful, retaining what it learns in the glossaries and ADRs in `ai-docs/`. (No working directory? Use `/grill-me` instead, covered under Standalone. Both run the same `/grilling` primitive; `grill-with-docs` is the one that leaves a paper trail, which makes it the better of the two whenever a repo is there to leave it in.)
+1. **`/grill-with-docs`** sharpens the idea by interview. Start here whenever you are **working in a working directory**: it's stateful, retaining what it learns in the glossaries and ADRs in `ai-docs/`. (No working directory? Use `/grill-me` instead, covered under Standalone. Both run the same interview; `grill-with-docs` is the one that leaves a paper trail, which makes it the better of the two whenever a repo is there to leave it in.)
 2. **Branch: can you settle every question in conversation?** If a question needs a runnable answer (state, business logic, a UI you have to see), detour through a prototype, bridged by **`/handoff`** in both directions (a prototype lives in its own directory, which is exactly what `/handoff` is for; see Phase boundaries):
    - **`/handoff`** out, then open a fresh session against that file,
    - **`/prototype`** to answer the question with throwaway code,
@@ -33,15 +33,15 @@ The route most work travels. You have an idea and want it built.
 
    Either way, the code gets built by driving **`/tdd`** (one red-green slice at a time) and closes out with **`/code-review`**, a two-axis review (Standards + Spec) of the diff. `/implement` runs both per ticket; `/implement-spec`'s implementers each drive `/tdd`, and it runs one `/code-review` over the integration branch. Reach for **`/tdd`** on its own when you just want to build a concrete behaviour test-first without a full spec, and **`/code-review`** on its own whenever you want to review a branch or PR against a fixed point.
 
-   When the work goes up as a pull request, **`/pr`** shapes the body: the smallest visual that shows the change, before/after evidence that it works, and a one-way or two-way door call. It's model-invoked, so the agent reaches for it whenever it writes a PR.
+   When the work goes up as a pull request, **`/pr`** shapes the body: the smallest visual that shows the change, before/after evidence that it works, and a one-way or two-way door call. Under the mode, the agent reaches for it whenever it writes a PR.
 
 4. **`/retro`** closes the loop. After a build, and especially one that went sideways, it looks back over the session and suggests changes to the agent's **environment**, not the code: navigation pointers, automated checks, the coding standards `/code-review` enforces, steering files, tooling. Mechanical mistakes become deterministic checks; judgement calls become coding standards. The next build then starts from a better environment.
 
 ### Context hygiene
 
-Keep steps 1–3 in **one unbroken context window** (don't compact or clear until after `/to-tickets`) so the grilling, spec, and tickets all build on the same thinking. Each `/implement` then starts fresh, working from the ticket. Run `/retro` in the session it's looking back on, before you clear; after clearing, point it at that session's log instead.
+Keep steps 1–3 in **one unbroken context window** (don't hand off or clear until after `/to-tickets`) so the grilling, spec, and tickets all build on the same thinking. Each `/implement` then starts fresh, working from the ticket. Run `/retro` in the session it's looking back on, before you clear; after clearing, point it at that session's log instead.
 
-The limit on this is the **[smart zone](https://www.aihero.dev/ai-coding-dictionary/smart-zone)**: the window (~150k tokens on state-of-the-art models) within which the model still reasons sharply. If a session approaches it before `/to-tickets`, don't push on degraded; `/compact` at the nearest phase boundary and carry on (see Phase boundaries).
+The limit on this is the **[smart zone](https://www.aihero.dev/ai-coding-dictionary/smart-zone)**: the window (~150k tokens on state-of-the-art models) within which the model still reasons sharply. If a session approaches it before `/to-tickets`, don't push on degraded; `/handoff` at the nearest phase boundary and carry on in the fresh session (see Phase boundaries).
 
 ## On-ramps
 
@@ -65,29 +65,27 @@ Not feature work, just upkeep.
 
 ## Vocabulary underneath
 
-Two references that run *beneath* the other skills, each the single source of truth for its vocabulary. Reach for `/domain-modeling` directly when the **words**, not the process, are the problem. `codebase-design` is agent-only: it loads on its own when module design comes up, or when the skills above pull it in.
+Two references that run *beneath* the other skills, each the single source of truth for its vocabulary. Reach for `/domain-modeling` directly when the **words**, not the process, are the problem. `codebase-design` is a reference with no command: the mode reaches it when module design comes up, and the skills above pull it in.
 
 - **`/domain-modeling`**: sharpen the project's *domain* language: challenge a fuzzy term, resolve an overloaded word ("account" doing three jobs), record a hard-to-reverse decision as an ADR. It's the active discipline `/grill-with-docs` drives to keep each glossary clean.
 - **`codebase-design`** is the deep-module vocabulary (module, interface, depth, seam, adapter, leverage, locality) for designing a module's *shape*: a lot of behaviour behind a small interface at a clean seam. `/tdd` and `/improve-codebase-architecture` both speak it.
 
 ## Phase boundaries
 
-A **phase** is a chunk of work inside a session: the grilling, the implementation, the QA. At the **boundary** between two of them you have five options, and picking between them is the fuzziest decision in this whole map:
+A **phase** is a chunk of work inside a session: the grilling, the implementation, the QA. At the **boundary** between two of them you have four options, and picking between them is the fuzziest decision in this whole map:
 
 - **Continue**: stay put. Costs nothing, loses nothing.
 - **`/clear`**: empty the window, when nothing here matters to what's next.
-- **`/handoff`** writes a portable markdown file. Narrow: only for a **new harness**, a **new directory**, a **colleague**, or forking a side task **mid-phase**. What it buys is portability.
 - **Subagent**: send a tightly-scoped task to its own window and get a report back.
-- **`/compact`** compresses this context and seeds a fresh session with it. The **default**, at the bottom of the tree rather than the first reach.
+- **`/handoff`** writes a portable markdown file and seeds a fresh session with it. The **default**, at the bottom of the tree rather than the first reach.
 
-Read [PHASE-BOUNDARIES.md](PHASE-BOUNDARIES.md) for the ordered tree: the five questions, the reasoning behind each branch, and why the primary-source cost makes **Continue** the one to rule out first. Make the decision **at** a boundary; mid-phase, continue or split the rest into subagents.
+Read [PHASE-BOUNDARIES.md](PHASE-BOUNDARIES.md) for the ordered tree: the four questions, the reasoning behind each branch, and why the primary-source cost makes **Continue** the one to rule out first. Make the decision **at** a boundary; mid-phase, continue or split the rest into subagents.
 
 ## Standalone
 
 Off the main flow entirely.
 
 - **`/grill-me`**: the same relentless interview as `/grill-with-docs`, but **stateless**: it saves nothing locally and builds no glossary. Reach for it when you are **not working in a working directory** (sharpening a plan, a design, a piece of writing, anything with no repo under it). If you are in a working directory, use `/grill-with-docs` instead: it runs the same interview and leaves a paper trail, so it is strictly the better one.
-- **`grilling`** is the interview primitive itself: rounds, the frontier, facts are the agent's job and decisions are yours. It's agent-only: `/grill-me` and `/grill-with-docs` are the two named ways in, and `/triage`, `/wayfinder` and `/improve-codebase-architecture` all run it internally.
 - **`/prototype`** is a small, throwaway program that answers one design question: does this state model feel right, or what should this UI look like. Throwaway is a constraint on how the code is written, not a promise to destroy it: the answer folds into the real code, and the prototype itself is kept as a **primary source** on a `prototype/<name>` branch out of main, pointed at from the implementation issue. It's the detour in step 2 of the main flow, but reach for it any time a design question is hard to settle on paper.
 - **`/research`**: delegate reading legwork to a **background agent**: it investigates a question against **primary sources**, then leaves a cited Markdown file in the repo. Keep working while it reads. The file it produces is something to take *into* the main flow at `/grill-with-docs`, since research feeds the thinking rather than replacing it.
 - **`/to-questionnaire`** comes in when the thing blocking you isn't in your head or the codebase but in **someone else's**, and it writes them a questionnaire to fill in. It's the inverse of `/grill-me`: instead of interviewing you about the subject, it interviews you about the **send** (who it's going to, what you need back) and aims the questions at the gap. What comes back is material for `/grill-with-docs` or `/to-spec`.

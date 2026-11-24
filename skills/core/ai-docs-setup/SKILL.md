@@ -6,6 +6,8 @@ disable-model-invocation: true
 
 # AI Docs Setup
 
+If `../core-skills/SKILL.md` isn't already in this session, read it first.
+
 Scaffold the root of `ai-docs/`, the home of every agent-facing doc in this monorepo:
 
 ```
@@ -112,27 +114,23 @@ None yet: `/domain-create` adds them.
 ## Notes
 ```
 
-**The GitHub labels**: call the Skill tool with "use-issue-tracker", and create each label in its table with its meaning as the description: `gh label create <name> --description "<meaning>"`. A label that already exists stays as it is.
+**The GitHub labels**: read the **use-issue-tracker** skill, and create each label in its table with its meaning as the description: `gh label create <name> --description "<meaning>"`. A label that already exists stays as it is.
 
-**The agent sections**, in the instructions file agents load: the pointer to `ai-docs/`, and the rule that stops a skill being loaded twice when another skill calls it.
+**The agent docs section**, in the instructions file agents load: the pointer to `ai-docs/`.
 
 ```md
 ## Agent docs
 
 Agent docs live in `ai-docs/`. Start every session at [ai-docs/ROUTER.md](./ai-docs/ROUTER.md).
-
-## Skills
-
-When a skill says to call the Skill tool with another skill that is already loaded in this session, skip the call. Call it again only if it has dropped out of context.
 ```
 
-Pick the file for these sections:
+Pick the file for this section:
 
 - If one of `CLAUDE.md` / `AGENTS.md` imports the other, edit the imported one.
 - Else if `CLAUDE.md` exists, edit it; else if `AGENTS.md` exists, edit it.
 - If neither exists, ask the user which to create.
 
-An existing `## Agent docs` or `## Skills` section is updated in place; the rest of the file stays as the user wrote it.
+An existing `## Agent docs` section is updated in place. A `## Skills` section left by an earlier setup is removed. The rest of the file stays as the user wrote it.
 
 Then carry out the legacy decisions from step 2.
 
