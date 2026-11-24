@@ -1,0 +1,5 @@
+interface:
+  display_name: "TS Conventions"
+  short_description: "How TypeScript is written across my projects"
+policy:
+  allow_implicit_invocation: false

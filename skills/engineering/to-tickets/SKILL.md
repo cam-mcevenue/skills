@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Break a plan, spec, or conversation into a set of **tickets**: tracer-bullet vertical slices, each declaring the tickets that **block** it.
 
-Call the Skill tool with "use-issue-tracker" before publishing: it holds the commands and labels.
+Read the **use-issue-tracker** skill before publishing: it holds the commands and labels.
 
 ## Process
 

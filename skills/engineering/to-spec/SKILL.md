@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user; just synthesize what you already know.
 
-Call the Skill tool with "use-issue-tracker" before publishing: it holds the commands and labels.
+Read the **use-issue-tracker** skill before publishing: it holds the commands and labels.
 
 ## Process
 

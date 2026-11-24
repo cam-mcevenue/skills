@@ -1,6 +1,7 @@
 ---
 name: pr
-description: "Use when writing a PR body."
+description: Write a PR body.
+disable-model-invocation: true
 ---
 
 Use this template for writing the PR body:
