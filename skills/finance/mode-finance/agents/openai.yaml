@@ -1,0 +1,5 @@
+interface:
+  display_name: "Finance Mode"
+  short_description: "Work on a business's finance docs and procedures"
+policy:
+  allow_implicit_invocation: false

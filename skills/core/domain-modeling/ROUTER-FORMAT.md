@@ -26,4 +26,4 @@ The root router keeps its domains under a `## Domains` heading.
 ## Which folders have one
 
 - `ai-docs/` and every domain: always.
-- A subfolder inside a domain: once it contains subfolders of its own.
+- A subfolder inside a domain: once it contains subfolders of its own, unless the domain's mode documents a fixed layout for it. The domain's top router then points at that layout.
