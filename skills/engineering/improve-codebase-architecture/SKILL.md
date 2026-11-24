@@ -2,10 +2,6 @@
 name: improve-codebase-architecture
 description: Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.
 disable-model-invocation: true
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/improve-codebase-architecture/SKILL.md"
-  adapted-by: Cameron McEvenue
 ---
 
 # Improve Codebase Architecture

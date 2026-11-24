@@ -2,10 +2,6 @@
 name: which-skill
 description: Ask which skill or flow fits your situation. A router over the skills in this repo.
 disable-model-invocation: true
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/ask-matt/SKILL.md"
-  adapted-by: Cameron McEvenue
 ---
 
 # Which Skill

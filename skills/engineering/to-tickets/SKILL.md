@@ -2,10 +2,6 @@
 name: to-tickets
 description: Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published as issues with native blocking links.
 disable-model-invocation: true
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/to-tickets/SKILL.md"
-  adapted-by: Cameron McEvenue
 ---
 
 # To Tickets

@@ -76,10 +76,11 @@ For working on code.
 
 ## Credits
 
-Most skills here are adapted from other authors' skills and then changed to fit this workflow. Each adapted skill keeps its upstream name, credits its author and source in its frontmatter, and ships the author's license in its folder.
+Most skills here are adapted from other authors' skills and then changed to fit this workflow. Each adapted skill keeps its upstream name and ships the author's license in its folder, which credits the source.
 
 - [mattpocock/skills](https://github.com/mattpocock/skills) by Matt Pocock (MIT)
 - [kitlangton/skills](https://github.com/kitlangton/skills) by Kit Langton (MIT)
+- [humanlayer/skills](https://github.com/humanlayer/skills) by HumanLayer (MIT)
 
 Install skills from this repo only: the adapted ones share their upstream names, so installing the originals alongside would collide.
 

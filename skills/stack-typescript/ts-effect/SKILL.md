@@ -5,10 +5,6 @@ description: |
   Opinionated guide for building production TypeScript applications with Effect v4. Use when implementing Effect workflows, services, layers, schemas, configuration, schedules, caches, streams, HTTP clients, or tests.
 license: MIT
 compatibility: Requires Effect v4. Examples are reviewed against the version documented in this repository.
-metadata: 
-  author: Kit Langton
-  source: "https://github.com/kitlangton/skills/blob/HEAD/skills/effect/SKILL.md"
-  adapted-by: Cameron McEvenue
 ---
 
 # Effect

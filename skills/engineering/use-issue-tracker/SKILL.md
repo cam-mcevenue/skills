@@ -2,10 +2,6 @@
 name: use-issue-tracker
 user-invocable: false
 description: "File, read, label, link, block and close this repo's issues. Use when a skill says to publish to, fetch from or update the issue tracker, or the user asks to create, triage, defer or close an issue."
-metadata:
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md"
-  adapted-by: Cameron McEvenue
 ---
 
 # Use Issue Tracker

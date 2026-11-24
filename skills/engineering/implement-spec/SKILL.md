@@ -2,10 +2,6 @@
 name: implement-spec
 description: "Implement the result of /to-spec and /to-tickets in code."
 disable-model-invocation: true
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/implement-spec/SKILL.md"
-  adapted-by: Cameron McEvenue
 ---
 
 You have been provided a spec. This spec should have tickets associated with it, describing how to implement the spec.

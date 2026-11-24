@@ -2,10 +2,6 @@
 name: implement
 description: "Implement a piece of work based on a spec or set of tickets."
 disable-model-invocation: true
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/implement/SKILL.md"
-  adapted-by: Cameron McEvenue
 ---
 
 Implement the work described by the user in the spec or tickets.

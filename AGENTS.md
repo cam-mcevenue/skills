@@ -19,22 +19,40 @@ The CLI finds skills only through `.claude-plugin/marketplace.json`; each group 
 
 ## Adapted skills
 
-An adapted skill carries its attribution in frontmatter, and only there; the body opens straight into the skill:
+An adapted skill carries its attribution in its `LICENSE`, and only there: the `SKILL.md` frontmatter and body stay free of it, since everything in `SKILL.md` lands in the agent's context. An install copies only the skill folder, so each adapted skill folder carries its own `LICENSE`, copied verbatim from the upstream repo with only its copyright lines changed. Anything outside the folder, symlinks pointing out of it included, never reaches an install.
 
-```yaml
-metadata:
-  author: Matt Pocock
-  source: "https://github.com/<owner>/<repo>/blob/HEAD/<path-to-skill>/SKILL.md"
-  adapted-by: Cameron McEvenue
+Unmodified, the upstream copyright line stays and the source follows it:
+
+```text
+Copyright (c) 2026 Matt Pocock
+
+https://github.com/<owner>/<repo>/blob/HEAD/<path-to-skill>/SKILL.md
 ```
 
-Own skills carry no attribution.
+Modified, from one work:
 
-An install copies only the skill folder, so each adapted skill folder carries its own `LICENSE`, copied from the upstream repo. Anything outside the folder, symlinks pointing out of it included, never reaches an install.
+```text
+Original work Copyright (c) 2026 Matt Pocock
+Modified work Copyright (c) 2026 Cameron McEvenue
 
-- Keep upstream credits as found: `metadata.credits` and `CREDITS.md`. For each work they credit, add that owner's license verbatim as `LICENSE-<owner>` (see `skills/engineering/pr/`).
-- Copy license text verbatim, copyright lines included.
-- Read the upstream license before adapting: MIT asks only for the notice, but others add duties (Apache-2.0 requires marking changed files).
+Adapted from: https://github.com/<owner>/<repo>/blob/HEAD/<path-to-skill>/SKILL.md
+```
+
+Modified, from several works (see `skills/engineering/pr/`):
+
+```text
+Copyright (c) 2026 Cameron McEvenue
+
+Adapted from the following MIT-licensed works:
+- Copyright (c) 2026 Matt Pocock - pr (<url>)
+- Copyright (c) 2026 HumanLayer - show-me (<url>)
+```
+
+The first edit to an unmodified skill's content switches its `LICENSE` to the modified format, in the same change.
+
+Own skills carry no `LICENSE`.
+
+Read the upstream license before adapting: MIT asks only for the notice, but others add duties (Apache-2.0 requires marking changed files).
 
 ## Adding a skill
 
@@ -50,7 +68,7 @@ An adapted skill:
 
 1. Install the original into the upstream mirror: `npx skills add <owner>/<repo> --skill <skill>`.
 2. Copy `.agents/skills/<skill>/` to `skills/<category>/<skill>/` under its upstream name: skills call each other by name (`grill-me` calls `grilling`), so a rename breaks the callers. Rename only a skill nothing calls, as `ask-matt` became `which-skill`. Bring along every skill it calls.
-3. Add the frontmatter above and the `LICENSE` copy.
+3. Add the `LICENSE` copy with the copyright lines above.
 4. Add it to its group in `marketplace.json` and to `README.md`.
 
 CLI side effects in this repo:

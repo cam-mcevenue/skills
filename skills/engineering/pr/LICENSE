@@ -1,6 +1,10 @@
 MIT License
 
-Copyright (c) 2026 Matt Pocock
+Copyright (c) 2026 Cameron McEvenue
+
+Adapted from the following MIT-licensed works:
+- Copyright (c) 2026 Matt Pocock - pr (https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/pr/SKILL.md)
+- Copyright (c) 2026 HumanLayer - show-me (https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

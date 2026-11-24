@@ -2,10 +2,6 @@
 name: triage
 description: Move issues through a state machine of triage roles, categorise, verify, grill if needed, write agent-ready briefs, or close them with an outcome.
 disable-model-invocation: true
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/triage/SKILL.md"
-  adapted-by: Cameron McEvenue
 ---
 
 # Triage

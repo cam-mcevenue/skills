@@ -1,10 +1,6 @@
 ---
 name: domain-modeling
 description: Build and sharpen a project's domain model in ai-docs/. Use when discussing domain terminology, writing or editing a GLOSSARY.md, recording or editing an ADR, or adding, renaming or removing a folder under ai-docs/.
-metadata: 
-  author: Matt Pocock
-  source: "https://github.com/mattpocock/skills/blob/HEAD/skills/engineering/domain-modeling/SKILL.md"
-  adapted-by: Cameron McEvenue
 ---
 
 # Domain Modeling
