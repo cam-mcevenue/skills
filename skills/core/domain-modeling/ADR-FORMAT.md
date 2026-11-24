@@ -1,6 +1,6 @@
 # ADR Format
 
-ADRs live in `_adrs/` folders: `ai-docs/_adrs/` for decisions that apply across domains, `ai-docs/<domain>/_adrs/` for one domain's. Each folder numbers its own: `0001-slug.md`, `0002-slug.md`, etc.
+ADRs live in `_adrs/` folders: `ai-docs/_adrs/` for decisions that apply across domains, `ai-docs/<domain>/_adrs/` for one domain's. Each folder numbers its own: `0001-slug.md`, `0002-slug.md`, etc. A domain whose mode documents its own decision format uses that format in its `_adrs/` instead.
 
 ## Creating the folder
 
