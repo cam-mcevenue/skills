@@ -28,7 +28,7 @@ Then, in each repo, run `/ai-docs-setup` once to scaffold `ai-docs/` and the Git
 
 ## Modes
 
-A **mode** is a way of working, started with a command at the top of a session: `/mode-engineering` for work on code. It gives the agent a trigger for every skill in its category, so it reaches each one when its situation comes up, and plain requests work as well as commands.
+A **mode** is a way of working, started with a command at the top of a session: `/mode-engineering` for work on code. Work runs through its **playbooks**: you describe the task, and the mode matches it to a list of steps it works through on its own, reading each skill as it needs it. In engineering they are **Spec a feature**, **Build a feature** and **Fix a bug**. To take full control of a session instead, type a skill's command yourself.
 
 - **Start a mode first**, unless the work is general and uses only core skills: those also run on their own, by typing their command.
 - **Engineering and stack skills run only under `/mode-engineering`.** Stacks have no mode of their own. When the agent wants a stack skill that isn't installed, it says so once and asks whether to install it or carry on.

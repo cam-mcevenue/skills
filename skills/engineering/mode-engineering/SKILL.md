@@ -8,25 +8,14 @@ disable-model-invocation: true
 
 If `../core-skills/SKILL.md` isn't already in this session, read it first. It says where skills live.
 
-## Triggers
+## Rules
 
 - Starting any agent → the first line of its kickoff is `Read <path>/worker.md before anything else.`, with `<path>` the absolute path of this skill's folder. Name in bold the skills the task needs.
-- A plan or design to stress-test → **grill-with-docs**, in place of **grill-me**
-- A design question only running code can answer → **prototype**
-- A conversation ready to become a spec → **to-spec**
-- A spec or plan to split into tickets → **to-tickets**
-- Work too big for one session to see the way through → **wayfinder**
-- One ticket or piece of work to build → **implement**
-- A whole spec to build across its tickets → **implement-spec**
-- A behaviour to build, or a bug to fix, test-first → **tdd**
-- A module's interface, depth or seam in question → **codebase-design**
-- Hunting deepening opportunities across the codebase → **improve-codebase-architecture**
-- A hard bug, flake or performance regression → **diagnosing-bugs**
-- Changes since a fixed point to review → **code-review**
-- Writing a PR body → **pr**
-- Filing, reading, labelling, linking or closing issues → **use-issue-tracker**
-- Incoming issues to sort into triage roles → **triage**
-- Looking back on a session to improve the environment → **retro**
-- Which skill or step comes next → **mode-engineering-help**
 - Writing or reviewing TypeScript → **ts-conventions**
 - Effect code → **ts-effect**
+
+## Playbooks
+
+Match the task to a playbook and open its steps at `playbooks/<title>.md` in this skill's folder, with the title in kebab case. Copy its steps into the todo list first. A task no playbook fits: say so, then work it directly, reading any skill the user names.
+
+Spec a feature, Build a feature, Fix a bug.

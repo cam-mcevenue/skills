@@ -15,8 +15,8 @@ Cameron McEvenue's skills, installed into other projects with `npx skills add ca
 Agents never load a skill on their own: every skill sets `disable-model-invocation: true`, and its `agents/openai.yaml` sets `allow_implicit_invocation: false`. Skills reach each other as files instead:
 
 - **Names in bold.** A skill names another in bold ("read the **tdd** skill, then follow it"), never through the Skill tool or a `../` link.
-- **`core-skills`** (in `core`) is the one place that says where skills live: the path rule, the read rule, what to do when a skill isn't installed, and a trigger for every core skill.
-- **A mode** is a way of working, such as `mode-engineering`: it reads `core-skills`, then holds a trigger for every skill in its category and the stacks paired with it, plus the kickoff rule for agents it starts. Agents a mode starts read its `worker.md`. A category has at most one mode, with a `mode-<name>-help` beside it; `core` and `stack-*` have none.
+- **`core-skills`** (in `core`) is the one place that says where skills live: the path rule, the read rule, what to do when a skill isn't installed, and triggers for the core skills that come up partway through other work.
+- **A mode** is a way of working, such as `mode-engineering`: it reads `core-skills`, then holds its **playbooks**, the main way work runs: step lists in its `playbooks/` folder, one per kind of task, that name skills in bold. Beside them sit the kickoff rule for agents it starts, and triggers only for skills no playbook or command reaches, such as the stack skills. Agents a mode starts read its `worker.md`. A category has at most one mode, with a `mode-<name>-help` beside it; `core` and `stack-*` have none.
 - **Triggers** read `<situation> → **<name>**`: one per branch, leading word first.
 - **The conditional read.** A core skill that names another opens with "If `../core-skills/SKILL.md` isn't already in this session, read it first." Engineering and stack skills skip it: they run only under their mode.
 - **Reference skills** with no command of their own also set `user-invocable: false`.
@@ -72,7 +72,7 @@ Keep skills operational and concise; add supporting files only when the skill ne
 An own skill:
 
 1. Create `skills/<category>/<skill>/SKILL.md` and its `agents/openai.yaml` (see Modes and lookup).
-2. Add its trigger to `core-skills` for a core skill, or to its category's mode otherwise.
+2. Reach it. A skill the user starts needs nothing more: its command reaches it. Otherwise, a core skill that comes up partway through other work gets a trigger in `core-skills`; any other skill joins a playbook step, or gets a trigger in its category's mode when nothing else reaches it, as with a stack skill.
 3. Add it to its group in `marketplace.json`.
 4. Add it to its category's list in `README.md`.
 
@@ -81,7 +81,7 @@ An adapted skill:
 1. Install the original into the upstream mirror: `npx skills add <owner>/<repo> --skill <skill>`.
 2. Copy `.agents/skills/<skill>/` to `skills/<category>/<skill>/` under its upstream name: skills name each other (`grill-with-docs` reads `grill-me`), so a rename breaks the callers. Rename only a skill nothing calls, as `ask-matt` became `mode-engineering-help`. Bring along every skill it calls.
 3. Add the `LICENSE` copy with the copyright lines above.
-4. Fit it to Modes and lookup: flip its frontmatter, convert its skill calls to bold names, and add its trigger.
+4. Fit it to Modes and lookup: flip its frontmatter, convert its skill calls to bold names, and reach it as step 2 for an own skill says.
 5. Add it to its group in `marketplace.json` and to `README.md`.
 
 CLI side effects in this repo:
