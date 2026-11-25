@@ -90,7 +90,7 @@ For a business's finance docs and procedures. Everything about the business live
 ### Stack: TypeScript
 
 - **ts-conventions** _(reference)_: how TypeScript is written across my projects.
-- **ts-effect** _(reference)_: building production TypeScript applications with Effect v4.
+- **ts-effect** _(reference)_: building production TypeScript applications with Effect v4, including agent-friendly CLIs.
 
 ## Credits
 
@@ -100,6 +100,7 @@ Most skills here are adapted from other authors' skills and then changed to fit 
 - [kitlangton/skills](https://github.com/kitlangton/skills) by Kit Langton (MIT)
 - [humanlayer/skills](https://github.com/humanlayer/skills) by HumanLayer (MIT)
 - [pstack](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan (MIT): the mode pattern, from `poteto-mode` and `poteto-help`
+- [cli-for-agent](https://github.com/cursor/plugins/tree/main/cli-for-agent) by Cursor (MIT): the CLI reference in `ts-effect`, from `cli-for-agents`
 
 Install skills from this repo only: the adapted ones share their upstream names, so installing the originals alongside would collide.
 
