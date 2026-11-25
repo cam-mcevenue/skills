@@ -28,13 +28,13 @@ Read what exists; assume nothing:
 - `ai-docs/` and each root entry above.
 - `AGENTS.md` and `CLAUDE.md` at the repo root, and whether either imports the other (a line like `@AGENTS.md`).
 - A **legacy glossary**: `GLOSSARY.md` at the repo root, from before `ai-docs/`.
-- The **target repo**: `gh repo view --json nameWithOwner,isFork`. If it fails, stop and tell the user what's missing (a GitHub remote, or `gh` access).
+- The **target repo**: `gh repo view --json nameWithOwner,isFork`. If it fails, stop and tell the operator what's missing (a GitHub remote, or `gh` access).
 
 ## 2. Present and confirm
 
-Show the user what exists, what this skill will create, the drafts from step 3, and the target repo. When `isFork` is true, say so: `gh` can target the upstream parent, so the user confirms which repo issues go to. If a legacy glossary exists, propose merging its terms into `ai-docs/GLOSSARY.md` under the seeded ones and deleting the root file; the user decides.
+Show the operator what exists, what this skill will create, the drafts from step 3, and the target repo. When `isFork` is true, say so: `gh` can target the upstream parent, so the operator confirms which repo issues go to. If a legacy glossary exists, propose merging its terms into `ai-docs/GLOSSARY.md` under the seeded ones and deleting the root file; the operator decides.
 
-Done when the user has approved the drafts and the target repo and, if there is one, decided on the legacy glossary.
+Done when the operator has approved the drafts and the target repo and, if there is one, decided on the legacy glossary.
 
 ## 3. Write
 
@@ -128,12 +128,12 @@ Pick the file for this section:
 
 - If one of `CLAUDE.md` / `AGENTS.md` imports the other, edit the imported one.
 - Else if `CLAUDE.md` exists, edit it; else if `AGENTS.md` exists, edit it.
-- If neither exists, ask the user which to create.
+- If neither exists, ask the operator which to create.
 
-An existing `## Agent docs` section is updated in place. A `## Skills` section left by an earlier setup is removed. The rest of the file stays as the user wrote it.
+An existing `## Agent docs` section is updated in place. A `## Skills` section left by an earlier setup is removed. The rest of the file stays as the operator wrote it.
 
 Then carry out the legacy decisions from step 2.
 
 ## 4. Done
 
-Report what was created and moved, including the labels created on GitHub, and tell the user to add domains with `/domain-create`.
+Report what was created and moved, including the labels created on GitHub, and tell the operator to add domains with `/domain-create`.

@@ -78,7 +78,7 @@ Be specific about edge cases and error conditions.
 **Current behavior:**
 When a skill description exceeds 1024 characters, it is truncated at exactly
 1024 characters regardless of word boundaries. This produces descriptions
-that end mid-word (e.g. "Use when the user wants to confi").
+that end mid-word (e.g. "Use when the operator wants to confi").
 
 **Desired behavior:**
 Truncation should break at the last word boundary before 1024 characters

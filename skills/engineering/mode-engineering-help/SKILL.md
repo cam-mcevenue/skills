@@ -6,7 +6,7 @@ disable-model-invocation: true
 
 # Engineering mode help
 
-Answer the user's question about engineering mode and its skills, and hand them the prompt or command to send. A help question gets an answer, not the work: the user asked how, so let them start it.
+Answer the operator's question about engineering mode and its skills, and hand them the prompt or command to send. A help question gets an answer, not the work: the operator asked how, so let them start it.
 
 Before stating what a skill does or recommending a step be skipped, read that skill in full: the summaries here are for orientation only.
 
@@ -16,7 +16,7 @@ Type **`/mode-engineering`** at the start of a session on code. It reads **core-
 
 ## Playbooks
 
-Most work runs through a **playbook**: steps the mode follows, reading each skill as it needs it, so the user describes the task instead of typing commands. Each one lives in the **mode-engineering** skill's `playbooks/` folder; read it before describing it.
+Most work runs through a **playbook**: steps the mode follows, reading each skill as it needs it, so the operator describes the task instead of typing commands. Each one lives in the **mode-engineering** skill's `playbooks/` folder; read it before describing it.
 
 - **Spec a feature**: grill the idea with `/grill-with-docs`, then publish a spec or a single ticket, or go straight on to building something small. Try: "spec out bulk export for invoices".
 - **Build a feature**: from a spec, a ticket or a grilling in this session, through `/implement` or `/implement-spec` to a PR. Try: "build #42".

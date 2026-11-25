@@ -4,7 +4,7 @@ description: "Turn the current conversation into a spec and publish it to the pr
 disable-model-invocation: true
 ---
 
-This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the user; just synthesize what you already know.
+This skill takes the current conversation context and codebase understanding and produces a spec. Do NOT interview the operator; just synthesize what you already know.
 
 Read the **use-issue-tracker** skill before publishing: it holds the commands and labels.
 
@@ -14,7 +14,7 @@ Read the **use-issue-tracker** skill before publishing: it holds the commands an
 
 2. Sketch out the seams at which you're going to test the feature. Existing seams should be preferred to new ones. Use the highest seam possible. If new seams are needed, propose them at the highest point you can. The fewer seams across the codebase, the better - the ideal number is one.
 
-Check with the user that these seams match their expectations.
+Check with the operator that these seams match their expectations.
 
 3. Write the spec using the template below, then publish it as an issue labelled `spec`. A spec carries no state label: its tickets, from `/to-tickets`, are what go on the work queue.
 

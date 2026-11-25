@@ -21,6 +21,7 @@ Agents never load a skill on their own: every skill sets `disable-model-invocati
 - **Triggers** read `<situation> → **<name>**`: one per branch, leading word first.
 - **The conditional read.** A core skill that names another opens with "If `../core-skills/SKILL.md` isn't already in this session, read it first." Engineering and stack skills skip it: they run only under their mode.
 - **Reference skills** with no command of their own also set `user-invocable: false`.
+- **The operator.** Skills call the person running the agent the **operator**, as `core-skills` defines it, so **user** keeps its product meaning: the people who use what's built.
 
 ## Install picker
 

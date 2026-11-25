@@ -15,8 +15,8 @@ Write against the Effect v4 version installed in this workspace, using the produ
 
 The installed `effect` package is the source of truth when:
 
-- What you remember disagrees with this skill (notify the user)
-- This skill disagrees with the installed package (notify the user)
+- What you remember disagrees with this skill (notify the operator)
+- This skill disagrees with the installed package (notify the operator)
 - The topic is not covered by this skill
 
 Read it from the package or app you are working in, at `<app|package>/node_modules/effect`. The `effect`

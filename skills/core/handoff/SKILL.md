@@ -7,7 +7,7 @@ disable-model-invocation: true
 
 If `../core-skills/SKILL.md` isn't already in this session, read it first.
 
-Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save to the temporary directory of the user's OS (`$TMPDIR`, else `/tmp`; `%TEMP%` on Windows) - not the current workspace.
+Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save to the temporary directory of the operator's OS (`$TMPDIR`, else `/tmp`; `%TEMP%` on Windows) - not the current workspace.
 
 Open the document with the skills the next agent should read:
 
@@ -18,8 +18,8 @@ Do not duplicate content already captured in other artifacts (specs, plans, ADRs
 
 Redact any sensitive information, such as API keys, passwords, or personally identifiable information, since the document may become an agent's prompt.
 
-If the user passed arguments, treat them as a description of what the next session will focus on and tailor the doc accordingly.
+If the operator passed arguments, treat them as a description of what the next session will focus on and tailor the doc accordingly.
 
 ## Starting the next session
 
-Only when the arguments ask for the next session to start now: read `references/<harness>.md` from this skill's folder for the harness you are running in (`claude.md` for Claude Code), and follow it. With no file for your harness, say so and give the user the document's path.
+Only when the arguments ask for the next session to start now: read `references/<harness>.md` from this skill's folder for the harness you are running in (`claude.md` for Claude Code), and follow it. With no file for your harness, say so and give the operator the document's path.
