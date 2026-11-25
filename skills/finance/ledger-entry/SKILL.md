@@ -1,6 +1,6 @@
 ---
 name: ledger-entry
-description: Write a ledger check or journal entry for the user to enter manually in QBO.
+description: Write a ledger check or journal entry for the operator to enter manually in QBO.
 disable-model-invocation: true
 ---
 

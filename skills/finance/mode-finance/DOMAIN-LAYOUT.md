@@ -16,6 +16,8 @@ ai-docs/finance/
 │   ├── snapshots/
 │   └── <ENTITY>_COA.md
 ├── procedures/
+│   └── [ENTITY_]<slug>/
+│       └── PROCEDURE.md
 ├── records/
 │   ├── active/
 │   └── archive/
@@ -37,7 +39,7 @@ ai-docs/finance/
 | `ledger/` | `<ENTITY>_COA.md` | each entity's chart of accounts ([The ledger](#the-ledger)) |
 | `ledger/current/` | `<ENTITY>_balance_sheet.csv`, `<ENTITY>_profit_loss.csv` | the latest QBO exports, as exported. Gitignored. |
 | `ledger/snapshots/` | `<ENTITY>_<report>_<yyyy-mm-dd>.csv` | temporary dated copies of those exports. Gitignored. |
-| `procedures/` | `[ENTITY_]<slug>.md` | repeatable tasks for this business ([Procedures](#procedures)) |
+| `procedures/` | `[ENTITY_]<slug>/PROCEDURE.md` | repeatable tasks for this business, one folder each ([Procedures](#procedures)) |
 | `records/active/` | `<yyyy-mm-dd>_[ENTITY_]<slug>.md`, dated when it happened | transactions and events that bear on current work ([Records](#records)) |
 | `records/archive/` | as `active/` | records no longer relevant |
 | `resources/` | `[ENTITY_]<slug>.md`, led by `<yyyy-mm-dd>_` when dated, such as an advisor memo | reference reading: tax rules, advisor details, broker quirks ([Resources](#resources)) |
@@ -55,7 +57,7 @@ ai-docs/finance/
 
 ## Frontmatter values
 
-`related-entities` and `entity` take entity names, plus a person's name where one is a party. `advisors`, `owner` and `waiting-on` take advisor role names, or the user's name.
+`related-entities` and `entity` take entity names, plus a person's name where one is a party. `advisors`, `owner` and `waiting-on` take advisor role names, or the operator's name.
 
 ## Governance
 
@@ -117,7 +119,7 @@ description: <one sentence>
 
 - **One record per transaction or event.** When it involves several entities, keep one shared file, with a `### <ENTITY> side` subsection for each under `## Facts`.
 - **`## Related record`** is optional: links to other records, decisions or ledger files.
-- **`archive/` is never read** unless the user asks. Only the user moves a record there.
+- **`archive/` is never read** unless the operator asks. Only the operator moves a record there.
 
 ## Decisions
 
@@ -147,12 +149,12 @@ description: <one sentence stating the decision>
 ## The ledger
 
 - **QBO is the authoritative ledger**; the files here are copies.
-- **A stale export.** Before relying on a report in `ledger/current/`, check its `to_date` reaches the date the task needs. Missing or short, ask the user to export it again.
+- **A stale export.** Before relying on a report in `ledger/current/`, check its `to_date` reaches the date the task needs. Missing or short, ask the operator to export it again.
 - **The chart of accounts** marks the entity's general journal clearing account in its Description: the account a check is written against.
 
 ## Procedures
 
-A procedure has one shape:
+A procedure is a folder, `procedures/[ENTITY_]<slug>/`, shaped like a skill: `PROCEDURE.md` holds the steps, and the files only it uses sit beside it, such as a sample input and the output it produced, named `<yyyy-mm-dd>_[ENTITY_]<slug>.<ext>`. Link them from `PROCEDURE.md`. `PROCEDURE.md` has one shape:
 
 ```md
 ### <Title>
@@ -165,18 +167,18 @@ A procedure has one shape:
 **Reply:** <what the final report must contain.>
 ```
 
-Reference sections may follow the steps. Documents a procedure processes come from `_input/`, and what it produces for the user goes to `_output/`. Business facts stay in the docs a procedure names, not in the procedure: account numbers in the chart of accounts, terms in the glossary, outside parties in `resources/`.
+Reference sections may follow the steps. Documents a procedure processes come from `_input/`, and what it produces for the operator goes to `_output/`. Business facts stay in the docs a procedure names, not in the procedure: account numbers in the chart of accounts, terms in the glossary, outside parties in `resources/`.
 
 ## Resources
 
-Read a resource only when another file links to it or the user asks.
+Read a resource only when another file links to it or the operator asks.
 
 ## Tasks
 
 ```md
 ---
 entity: [<ENTITY>]
-owner: <user or role>
+owner: <operator or role>
 status: open
 waiting-on:
 created: <yyyy-mm-dd>
@@ -188,6 +190,6 @@ completed:
 ```
 
 - **Numbering.** `<nnnnnn>` is the next six-digit number after the highest in `todo/` and `done/` together. Never reuse or renumber.
-- **Status.** `open` when the user can act now; `waiting` when blocked, with `waiting-on` naming by whom.
+- **Status.** `open` when the operator can act now; `waiting` when blocked, with `waiting-on` naming by whom.
 - **Sections.** `## Context` holds why it exists, its figures and links; `## Done when` a concrete finish line.
-- **Completing.** Only once the user confirms it's done: set `completed`, add `## Outcome`, move durable facts into a record or the glossary, then move the file to `done/`.
+- **Completing.** Only once the operator confirms it's done: set `completed`, add `## Outcome`, move durable facts into a record or the glossary, then move the file to `done/`.

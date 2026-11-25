@@ -14,8 +14,8 @@ Everything about the business (its entities, accounts, advisors, decisions and p
 
 - Starting any agent → the first line of its kickoff is `Read <path>/worker.md before anything else.`, with `<path>` the absolute path of this skill's folder. Name in bold the skills the task needs.
 - Reading or writing under `ai-docs/finance/` → read `DOMAIN-LAYOUT.md` in this skill's folder.
-- Documents to process arrive in `_input/` at the repo root; artifacts for the user go to `_output/`. Both are gitignored working folders, never docs.
+- Documents to process arrive in `_input/` at the repo root; artifacts for the operator go to `_output/`. Both are gitignored working folders, never docs.
 
 ## Procedures
 
-A **procedure** is a repeatable task written for this business, in `ai-docs/finance/procedures/`. Match the task to a procedure, then read it and follow its steps, copying them into the todo list first. A task no procedure fits: say so, then work it directly, reading any skill the user names.
+A **procedure** is a repeatable task written for this business, in its own folder under `ai-docs/finance/procedures/`. Match the task to a procedure, then read its `PROCEDURE.md` and follow its steps, copying them into the todo list first. A task no procedure fits: say so, then work it directly, reading any skill the operator names.
