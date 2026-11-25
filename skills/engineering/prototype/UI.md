@@ -1,6 +1,6 @@
 # UI Prototype
 
-Generate **several radically different UI variations** on a single route, switchable from a floating bottom bar. The user flips between variants in the browser, picks one (or steals bits from each), then throws the rest away.
+Generate **several radically different UI variations** on a single route, switchable from a floating bottom bar. The operator flips between variants in the browser, picks one (or steals bits from each), then throws the rest away.
 
 If the question is about logic/state rather than what something looks like, this is the wrong branch. Use [LOGIC.md](LOGIC.md).
 
@@ -9,7 +9,7 @@ If the question is about logic/state rather than what something looks like, this
 - "What should this page look like?"
 - "I want to see a few options for this dashboard before committing."
 - "Try a different layout for the settings screen."
-- Any time the user would otherwise spend a day picking between three vague mockups in their head.
+- Any time the operator would otherwise spend a day picking between three vague mockups in their head.
 
 ## Two sub-shapes: strongly prefer sub-shape A
 
@@ -41,7 +41,7 @@ Write down the plan in one line, in the prototype's location or a top-of-file co
 
 > "Three variants of the settings page, switchable via `?variant=`, on the existing `/settings` route."
 
-This works whether the user is here to push back or not.
+This works whether the operator is here to push back or not.
 
 ### 2. Generate radically different variants
 
@@ -93,7 +93,7 @@ Put the switcher in a single shared component so both sub-shapes can reuse it. L
 
 ### 5. Hand it over
 
-Surface the URL (and the `?variant=` keys). The user will flip through whenever they get to it. The interesting feedback is usually **"I want the header from B with the sidebar from C"**, which is the actual design they want.
+Surface the URL (and the `?variant=` keys). The operator will flip through whenever they get to it. The interesting feedback is usually **"I want the header from B with the sidebar from C"**, which is the actual design they want.
 
 ### 6. Capture the answer and clean up
 

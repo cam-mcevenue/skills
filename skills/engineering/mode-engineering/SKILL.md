@@ -16,6 +16,6 @@ If `../core-skills/SKILL.md` isn't already in this session, read it first. It sa
 
 ## Playbooks
 
-Match the task to a playbook and open its steps at `playbooks/<title>.md` in this skill's folder, with the title in kebab case. Copy its steps into the todo list first. A task no playbook fits: say so, then work it directly, reading any skill the user names.
+Match the task to a playbook and open its steps at `playbooks/<title>.md` in this skill's folder, with the title in kebab case. Copy its steps into the todo list first. A task no playbook fits: say so, then work it directly, reading any skill the operator names.
 
 Spec a feature, Build a feature, Fix a bug.

@@ -29,7 +29,7 @@ Use this template for writing the PR body:
 
 ## Sections
 
-Skip all preambles and keep prose brief. Use the user's domain language from the glossaries in `ai-docs/`.
+Skip all preambles and keep prose brief. Use the operator's domain language from the glossaries in `ai-docs/`.
 
 ### Summary
 
@@ -135,7 +135,7 @@ For a state or control-flow change:
 +  invalidate cache
 ```
 
-- Show the whole block when most of it is new, when omitted context would hide ownership or order, or when the user needs a copyable target shape:
+- Show the whole block when most of it is new, when omitted context would hide ownership or order, or when the operator needs a copyable target shape:
 
 ```ts
 function expandSkill(command: string): string {
@@ -146,9 +146,9 @@ function expandSkill(command: string): string {
 
 #### Guidance
 
-Place each visual next to the short text it supports. Keep only the calls, files, props, states, and boundaries needed to answer the user's current question or the options to resolve the current discussion point.
+Place each visual next to the short text it supports. Keep only the calls, files, props, states, and boundaries needed to answer the operator's current question or the options to resolve the current discussion point.
 
-You may use one of these, you may use several, it is unlikely you will use all of them. Use your judgement and don't overwhelm the user.
+You may use one of these, you may use several, it is unlikely you will use all of them. Use your judgement and don't overwhelm the operator.
 
 ### Evidence
 

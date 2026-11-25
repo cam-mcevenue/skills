@@ -4,7 +4,7 @@ description: "Review the changes since a fixed point along two axes: the repo's 
 disable-model-invocation: true
 ---
 
-Two-axis review of the diff between `HEAD` and a fixed point the user supplies:
+Two-axis review of the diff between `HEAD` and a fixed point the operator supplies:
 
 - **Standards**: does the code conform to this repo's documented coding standards?
 - **Spec**: does the code faithfully implement the originating issue / spec?
@@ -14,7 +14,7 @@ Both axes run as **parallel sub-agents** so they don't pollute each other's cont
 
 ### 1. Pin the fixed point
 
-Whatever the user said is the fixed point (a commit SHA, branch name, tag, `main`, `HEAD~5`, etc.). If they didn't specify one, ask for it.
+Whatever the operator said is the fixed point (a commit SHA, branch name, tag, `main`, `HEAD~5`, etc.). If they didn't specify one, ask for it.
 
 Capture the diff command once: `git diff <fixed-point>...HEAD` (three-dot, so the comparison is against the merge-base). Also note the list of commits via `git log <fixed-point>..HEAD --oneline`.
 
@@ -25,8 +25,8 @@ Before going further, confirm the fixed point resolves (`git rev-parse <fixed-po
 Look for the originating spec, in this order:
 
 1. Issue references in the commit messages (`#123`, `Closes #45`), fetched with `gh issue view <n> --json title,body,labels,comments`. When the issue is a ticket, its parent `spec` is the spec (`gh issue view <n> --json parent`).
-2. An issue or path the user passed as an argument.
-3. If nothing is found, ask the user where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
+2. An issue or path the operator passed as an argument.
+3. If nothing is found, ask the operator where the spec is. If they say there isn't one, the **Spec** sub-agent will skip and report "no spec available".
 
 ### 3. Identify the standards sources
 

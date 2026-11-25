@@ -25,7 +25,7 @@ ai-docs/
     └── bookkeeping/   an ordinary subfolder
 ```
 
-If `ai-docs/ROUTER.md` doesn't exist, stop and tell the user to run `/ai-docs-setup`. When a topic needs a domain that doesn't exist yet, suggest the user runs `/domain-create`: domains are created only through it.
+If `ai-docs/ROUTER.md` doesn't exist, stop and tell the operator to run `/ai-docs-setup`. When a topic needs a domain that doesn't exist yet, suggest the operator runs `/domain-create`: domains are created only through it.
 
 Work in the domain the topic belongs to, matched by its line in the root router; if it's unclear, ask. A term or decision that holds across domains goes at the root.
 
@@ -33,23 +33,23 @@ Work in the domain the topic belongs to, matched by its line in the root router;
 
 ### Challenge against the glossary
 
-When the user uses a term that conflicts with the existing language in the glossary, call it out immediately. "Your glossary defines 'cancellation' as X, but you seem to mean Y. Which is it?"
+When the operator uses a term that conflicts with the existing language in the glossary, call it out immediately. "Your glossary defines 'cancellation' as X, but you seem to mean Y. Which is it?"
 
 ### Challenge against the ADRs
 
-When the user proposes something that contradicts an existing ADR, surface it with the ADR's reference rather than silently going along: "That contradicts finance ADR-0003 (cash-basis bookkeeping). Reopen it, or work within it?"
+When the operator proposes something that contradicts an existing ADR, surface it with the ADR's reference rather than silently going along: "That contradicts finance ADR-0003 (cash-basis bookkeeping). Reopen it, or work within it?"
 
 ### Sharpen fuzzy language
 
-When the user uses vague or overloaded terms, propose a precise canonical term. "You're saying 'account': do you mean the Customer or the User? Those are different things."
+When the operator uses vague or overloaded terms, propose a precise canonical term. "You're saying 'account': do you mean the Customer or the User? Those are different things."
 
 ### Discuss concrete scenarios
 
-When domain relationships are being discussed, stress-test them with specific scenarios. Invent scenarios that probe edge cases and force the user to be precise about the boundaries between concepts.
+When domain relationships are being discussed, stress-test them with specific scenarios. Invent scenarios that probe edge cases and force the operator to be precise about the boundaries between concepts.
 
 ### Cross-reference with the work
 
-When the user states how something works, check whether the work agrees: the code itself for the codebase domain, the domain's docs and records for any other. If you find a contradiction, surface it: "Your code cancels entire Orders, but you just said partial cancellation is possible. Which is right?"
+When the operator states how something works, check whether the work agrees: the code itself for the codebase domain, the domain's docs and records for any other. If you find a contradiction, surface it: "Your code cancels entire Orders, but you just said partial cancellation is possible. Which is right?"
 
 ### Update the glossary inline
 
