@@ -1,9 +1,10 @@
 MIT License
 
-Original work Copyright (c) 2026 Kit Langton
-Modified work Copyright (c) 2026 Cameron McEvenue
+Copyright (c) 2026 Cameron McEvenue
 
-Adapted from: https://github.com/kitlangton/skills/blob/HEAD/skills/effect/SKILL.md
+Adapted from the following MIT-licensed works:
+- Copyright (c) 2026 Kit Langton - effect (https://github.com/kitlangton/skills/blob/HEAD/skills/effect/SKILL.md)
+- Copyright (c) 2026 Cursor - cli-for-agents (https://github.com/cursor/plugins/blob/HEAD/cli-for-agent/skills/cli-for-agents/SKILL.md)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
