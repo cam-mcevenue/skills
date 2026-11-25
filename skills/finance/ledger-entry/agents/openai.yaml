@@ -1,0 +1,5 @@
+interface:
+  display_name: "Ledger Entry"
+  short_description: "Write a check or journal entry to enter in QBO"
+policy:
+  allow_implicit_invocation: false

@@ -7,6 +7,7 @@ Cameron McEvenue's skills, installed into other projects with `npx skills add ca
 - `skills/<category>/<skill>/SKILL.md`. The categories:
   - `core`: any repo, code or not.
   - `engineering`: working on code.
+  - `finance`: a business's finance docs and procedures, kept in `ai-docs/finance/`.
   - `stack-<name>`: one language or framework, such as `stack-typescript`.
 - `.agents/skills/` is the **upstream mirror**: original skills installed with `npx skills add <owner>/<repo>` and tracked in `skills-lock.json`. It records what each adapted skill started from and is never published.
 
@@ -16,7 +17,7 @@ Agents never load a skill on their own: every skill sets `disable-model-invocati
 
 - **Names in bold.** A skill names another in bold ("read the **tdd** skill, then follow it"), never through the Skill tool or a `../` link.
 - **`core-skills`** (in `core`) is the one place that says where skills live: the path rule, the read rule, what to do when a skill isn't installed, and triggers for the core skills that come up partway through other work.
-- **A mode** is a way of working, such as `mode-engineering`: it reads `core-skills`, then holds its **playbooks**, the main way work runs: step lists in its `playbooks/` folder, one per kind of task, that name skills in bold. Beside them sit the kickoff rule for agents it starts, and triggers only for skills no playbook or command reaches, such as the stack skills. Agents a mode starts read its `worker.md`. A category has at most one mode, with a `mode-<name>-help` beside it; `core` and `stack-*` have none.
+- **A mode** is a way of working, such as `mode-engineering`: it reads `core-skills`, then holds its **playbooks**, the main way work runs: step lists in its `playbooks/` folder, one per kind of task, that name skills in bold. Beside them sit the kickoff rule for agents it starts, and triggers only for skills no playbook or command reaches, such as the stack skills. A mode whose steps are specific to one business, such as `mode-finance`, follows **procedures** kept in that repo's `ai-docs/` instead, and documents the domain's fixed layout in a supporting file. Agents a mode starts read its `worker.md`. A category has at most one mode, with a `mode-<name>-help` beside it; `core` and `stack-*` have none.
 - **Triggers** read `<situation> → **<name>**`: one per branch, leading word first.
 - **The conditional read.** A core skill that names another opens with "If `../core-skills/SKILL.md` isn't already in this session, read it first." Engineering and stack skills skip it: they run only under their mode.
 - **Reference skills** with no command of their own also set `user-invocable: false`.

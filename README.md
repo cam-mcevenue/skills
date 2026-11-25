@@ -28,7 +28,7 @@ Then, in each repo, run `/ai-docs-setup` once to scaffold `ai-docs/` and the Git
 
 ## Modes
 
-A **mode** is a way of working, started with a command at the top of a session: `/mode-engineering` for work on code. Work runs through its **playbooks**: you describe the task, and the mode matches it to a list of steps it works through on its own, reading each skill as it needs it. In engineering they are **Spec a feature**, **Build a feature** and **Fix a bug**. To take full control of a session instead, type a skill's command yourself.
+A **mode** is a way of working, started with a command at the top of a session: `/mode-engineering` for work on code, `/mode-finance` for a business's finance docs. Work runs through its **playbooks**: you describe the task, and the mode matches it to a list of steps it works through on its own, reading each skill as it needs it. In engineering they are **Spec a feature**, **Build a feature** and **Fix a bug**. To take full control of a session instead, type a skill's command yourself.
 
 - **Start a mode first**, unless the work is general and uses only core skills: those also run on their own, by typing their command.
 - **Engineering and stack skills run only under `/mode-engineering`.** Stacks have no mode of their own. When the agent wants a stack skill that isn't installed, it says so once and asks whether to install it or carry on.
@@ -79,6 +79,13 @@ For working on code.
 - **triage**: move issues through triage, write agent briefs, or close them with an outcome.
 - **use-issue-tracker** _(reference)_: the GitHub Issues workflow: labels, commands, specs and tickets, closing.
 - **wayfinder**: plan a huge, foggy piece of work as a map of decision tickets.
+
+### Finance
+
+For a business's finance docs and procedures. Everything about the business lives in the repo's `ai-docs/finance/`; these hold only the ways of working.
+
+- **ledger-entry**: write a check or journal entry to enter manually in QBO.
+- **mode-finance**: work on the finance docs for the session, following the business's own procedures.
 
 ### Stack: TypeScript
 

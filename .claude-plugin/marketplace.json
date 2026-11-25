@@ -46,6 +46,14 @@
       ]
     },
     {
+      "name": "finance",
+      "source": "./",
+      "skills": [
+        "./skills/finance/ledger-entry",
+        "./skills/finance/mode-finance"
+      ]
+    },
+    {
       "name": "stack-typescript",
       "source": "./",
       "skills": [
