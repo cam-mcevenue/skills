@@ -14,9 +14,17 @@
         "./skills/core/domain-modeling",
         "./skills/core/grill-me",
         "./skills/core/handoff",
+        "./skills/core/learn",
+        "./skills/core/principle-attack-the-premise",
+        "./skills/core/principle-build-the-lever",
+        "./skills/core/principle-encode-lessons-in-structure",
+        "./skills/core/principle-explain-the-number",
+        "./skills/core/principle-guard-the-context-window",
+        "./skills/core/principle-prove-it-works",
+        "./skills/core/principle-sequence-verifiable-units",
         "./skills/core/research",
-        "./skills/core/teach",
         "./skills/core/to-questionnaire",
+        "./skills/core/unslop",
         "./skills/core/wait-what",
         "./skills/core/writing-for-agents"
       ]
@@ -25,24 +33,44 @@
       "name": "engineering",
       "source": "./",
       "skills": [
+        "./skills/engineering/architect",
         "./skills/engineering/code-review",
-        "./skills/engineering/codebase-design",
+        "./skills/engineering/correct",
         "./skills/engineering/diagnosing-bugs",
         "./skills/engineering/grill-with-docs",
+        "./skills/engineering/how",
         "./skills/engineering/implement",
         "./skills/engineering/implement-spec",
         "./skills/engineering/improve-codebase-architecture",
         "./skills/engineering/mode-engineering",
         "./skills/engineering/mode-engineering-help",
         "./skills/engineering/pr",
+        "./skills/engineering/principle-boundary-discipline",
+        "./skills/engineering/principle-exhaust-the-design-space",
+        "./skills/engineering/principle-experience-first",
+        "./skills/engineering/principle-fix-root-causes",
+        "./skills/engineering/principle-foundational-thinking",
+        "./skills/engineering/principle-laziness-protocol",
+        "./skills/engineering/principle-make-operations-idempotent",
+        "./skills/engineering/principle-migrate-callers-then-delete-legacy-apis",
+        "./skills/engineering/principle-minimize-reader-load",
+        "./skills/engineering/principle-model-the-domain",
+        "./skills/engineering/principle-outcome-oriented-execution",
+        "./skills/engineering/principle-redesign-from-first-principles",
+        "./skills/engineering/principle-separate-before-serializing-shared-state",
+        "./skills/engineering/principle-subtract-before-you-add",
+        "./skills/engineering/principle-test-behavior-not-implementation",
+        "./skills/engineering/principle-type-system-discipline",
         "./skills/engineering/prototype",
         "./skills/engineering/retro",
         "./skills/engineering/tdd",
+        "./skills/engineering/teach",
         "./skills/engineering/to-spec",
         "./skills/engineering/to-tickets",
         "./skills/engineering/triage",
         "./skills/engineering/use-issue-tracker",
-        "./skills/engineering/wayfinder"
+        "./skills/engineering/wayfinder",
+        "./skills/engineering/why"
       ]
     },
     {
@@ -57,8 +85,8 @@
       "name": "stack-typescript",
       "source": "./",
       "skills": [
-        "./skills/stack-typescript/ts-conventions",
-        "./skills/stack-typescript/ts-effect"
+        "./skills/stack-typescript/typescript",
+        "./skills/stack-typescript/typescript-effect"
       ]
     }
   ]
