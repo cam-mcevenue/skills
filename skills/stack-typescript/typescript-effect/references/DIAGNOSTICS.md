@@ -6,6 +6,21 @@ For a repo that runs the Effect language service through `@effect/tsgo` and repo
 
 The Effect rules need the Effect-patched Oxlint binding, which `effect-tsgo` preloads. Every lint or check entry point runs through it: the scripts (`effect-tsgo vp check`) and the editor's language servers (`effect-tsgo oxlint --lsp`, `effect-tsgo tsc --lsp --stdio`). Started without it, Oxlint fails to load the config with `Unknown plugin: 'effecttsgo'`. Nothing in `node_modules` is patched. A repo on tsrs instead of tsgo adds `--tsrs-lint` before every Oxlint call (`effect-tsgo --tsrs-lint vp check`) and starts the type server as `effect-tsgo tsrs --lsp --stdio`.
 
+## Checker: tsrs or tsgo
+
+`effect-tsgo` patches either TypeScript 7 build: tsgo, Microsoft's Go port (the `typescript` package at 7.x), or tsrs, the Oxc team's Rust port (the `tsrs` package). A repo pins exactly one in its catalog. Measured on a probe file, tsrs gives the same findings with the lint and typecheck step at about 340ms instead of 435ms, but it tracks a TypeScript beta and Effect labels its tsrs support experimental. Read which one a repo runs from its `--tsrs-lint` flags.
+
+Switching from tsrs to tsgo, every place the checker is named changes together:
+
+1. In the catalog, replace `tsrs` with `typescript` at a 7.x release, and swap every `devDependencies` entry that references it.
+2. In the `package.json` scripts, drop `--tsrs-lint` from each `effect-tsgo` call.
+3. In the editor's language-server settings, drop `--tsrs-lint` from the Oxlint arguments and start the type server as `effect-tsgo tsc --lsp --stdio`.
+4. In any build script or build fragment that calls `tsrs -b`, change it to `tsc -b`, then regenerate the files derived from it.
+5. Update comments that name the invocation, such as the one in `oxlint.config.ts`.
+6. Reinstall, restart the editor, and run the repo's gates.
+
+Switching from tsgo to tsrs is the same list in reverse. A missed step fails loudly at the gates, except for the editor, which keeps running the old checker until it restarts with the new arguments.
+
 ## Two files, two jobs
 
 - **The tsconfig plugin block describes the code.** `effectFn`, `allowedUnstableApis`, `allowedExperimentalApis` and `allowedDuplicatedPackages` are facts the rules need, not policy. A fact the whole repo shares goes in the shared base (often `tsconfig.effect.json`); a fact one package needs goes in that package's `tsconfig.json`.
