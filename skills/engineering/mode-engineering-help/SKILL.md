@@ -38,14 +38,14 @@ A small feature can run Spec then Build in one session. Keep the grilling, the s
 
 Not feature work, just upkeep.
 
-- **`/improve-codebase-architecture`** runs whenever you have a spare moment to keep the codebase good for agents to operate in. It surfaces **deepening opportunities**; picking one _generates an idea_ you can take into **Spec a feature**. It's the survey that finds the candidates; **`codebase-design`** (below) is the bench you design the chosen one on.
+- **`/improve-codebase-architecture`** runs whenever you have a spare moment to keep the codebase good for agents to operate in. It surfaces **deepening opportunities**; picking one _generates an idea_ you can take into **Spec a feature**. It's the survey that finds the candidates; **`/architect`** (below) is the bench you design the chosen one on.
 
 ## Vocabulary underneath
 
-Two references that run *beneath* the other skills, each the single source of truth for its vocabulary. Reach for `/domain-modeling` directly when the **words**, not the process, are the problem. `codebase-design` is a reference with no command: the mode reaches it when module design comes up, and the skills above pull it in.
+Two references that run *beneath* the other skills, each the single source of truth for its vocabulary. Reach for `/domain-modeling` directly when the **words**, not the process, are the problem. Reach for `/architect` when a module's **shape** is the problem; the skills above also pull in its vocabulary.
 
 - **`/domain-modeling`**: sharpen the project's *domain* language: challenge a fuzzy term, resolve an overloaded word ("account" doing three jobs), record a hard-to-reverse decision as an ADR. It's the active discipline `/grill-with-docs` drives to keep each glossary clean.
-- **`codebase-design`** is the deep-module vocabulary (module, interface, depth, seam, adapter, leverage, locality) for designing a module's *shape*: a lot of behaviour behind a small interface at a clean seam. `/tdd` and `/improve-codebase-architecture` both speak it.
+- **`/architect`** is the deep-module vocabulary (module, interface, depth, seam, adapter, leverage, locality) for designing a module's *shape*: a lot of behaviour behind a small interface at a clean seam. Run it to sketch types, signatures and module structure before writing code; `/tdd` and `/improve-codebase-architecture` both speak its vocabulary.
 
 ## Phase boundaries
 
@@ -67,7 +67,10 @@ Off the playbooks entirely.
 - **`/research`**: delegate reading legwork to a **background agent**: it investigates a question against **primary sources**, then leaves a cited Markdown file in the repo. Keep working while it reads. The file it produces is something to take *into* **Spec a feature**, since research feeds the thinking rather than replacing it.
 - **`/to-questionnaire`** comes in when the thing blocking you isn't in your head or the codebase but in **someone else's**, and it writes them a questionnaire to fill in. It's the inverse of `/grill-me`: instead of interviewing you about the subject, it interviews you about the **send** (who it's going to, what you need back) and aims the questions at the gap. What comes back is material for `/grill-with-docs` or `/to-spec`.
 - **`/wait-what`** is the corrective for a message that didn't land. Use it mid-conversation, inside any other skill, and the agent re-pitches what it just said with the context you were missing, in plain English, using the glossary vocabulary. It works after the fact; `/grill-with-docs` is the upfront cure, because a shared language agreed early is what stops the jargon arriving at all.
-- **`/teach`**: learn a concept over multiple sessions, using the current directory as a stateful workspace.
+- **`/learn`**: learn a concept over multiple sessions, using the current directory as a stateful workspace.
+- **`/teach`**: understand a body of work already in the repo (a subsystem, a change) in one plain explanation, built from **`/how`** (how it works) and **`/why`** (why it's that way, from the commits and PRs).
+- **`/correct`**: when you keep correcting agents for the same mistake, change the repo so the next agent can't make it.
+- **`/unslop`**: cut AI tells from a piece of writing.
 - **`/writing-for-agents`** is the reference for writing documents agents consume: skills, AGENTS.md, pointed-at docs.
 
 ## Precondition
